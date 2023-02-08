@@ -6,5 +6,5 @@
 **kombinované _zvýraznění_**
 1. první
 2. druhé
-  1. něco
+  1. něco  
 [link](https://www.google.com)
