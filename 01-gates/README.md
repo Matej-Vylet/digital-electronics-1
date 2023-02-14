@@ -6,7 +6,7 @@
 
    ![Logic function](images/equations.png)
    
-   $f_{\text{ORIG}}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}$ \\
+   $f_{\text{ORIG}}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}$ \newline
    $f_{\text{(N)AND}}(c, b, a)= \overline{\overline{(\bar{b} \cdot a)} \cdot \overline{c \cdot (\bar{b} \cdot a)}}$ \\
    $f_{\text{(N)OR}}(c, b, a)= \overline{(b+\bar{a})} + \overline{\bar{c} + (b+\bar{a})}$
    
