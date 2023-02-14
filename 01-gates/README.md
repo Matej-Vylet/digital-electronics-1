@@ -6,7 +6,7 @@
 
    ![Logic function](images/equations.png)
    ```math
-   f_{\text{ORIG}}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}
+   f_{\text{ORIG}}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})} \n
    f_{\text{(N)AND}}(c, b, a)= \overline{\overline{(\bar{b} \cdot a)} \cdot \overline{c \cdot (\bar{b} \cdot a)}}
    ```
 
