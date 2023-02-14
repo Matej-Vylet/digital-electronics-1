@@ -6,7 +6,7 @@
 
    ![Logic function](images/equations.png)
    ```math
-   f_{ORIG}(c, b, a)= \bar{b} \cdot a+c.\bar{(b+\bar{a})}
+   f_{ORIG}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}
    ```
 
 2. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
