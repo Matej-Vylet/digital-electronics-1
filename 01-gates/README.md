@@ -4,7 +4,7 @@
 
 1. Equations of all three versions of logic function f(c,b,a):
 
-   ![Logic function](images/equations.png)
+  
    
    $$f_{\text{ORIG}}(c, b, a)= \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}$$ 
    $$f_{\text{(N)AND}}(c, b, a)= \overline{\overline{(\bar{b} \cdot a)} \cdot \overline{c \cdot (\bar{b} \cdot a)}}$$ 
