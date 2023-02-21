@@ -18,7 +18,7 @@
 
    $$greater_{\text{SoP}}^{\text{min}}= b_1 \cdot \bar{a}_1 + b_1 \cdot b_0 \cdot \bar{a}_0 + b_0 \cdot \bar{a}_1 \cdot \bar{a}_0 $$ 
    
-   $$f_{\text{(N)OR}}(c, b, a)= \overline{(b+\bar{a})} + \overline{\bar{c} + (b+\bar{a})}$$
+   $$less_{\text{PoS}}^{\text{min}}= (a_1 + a_0) \cdot (\bar{b}_1 + \bar{b}_0) \cdot (\bar{b}_0 + a_1) \cdot (\bar{b}_1 + a_0) $$ 
 
 ### 4-bit comparator
 
