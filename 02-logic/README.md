@@ -5,8 +5,9 @@
 1. Karnaugh maps for other two functions of 2-bit comparator:
 
    Greater than:
+   ![K-maps](https://user-images.githubusercontent.com/124773189/220407055-eb5e2687-f83f-4e7a-9049-467c41bf1df2.png)
 
-   ![K-maps](images/kmap_empty.png)
+   
 
    Less than:
 
