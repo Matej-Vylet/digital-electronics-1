@@ -16,7 +16,7 @@
 
 2. Mark the largest possible implicants in the K-map and according to them, write the equations of simplified SoP (Sum of the Products) form of the "greater than" function and simplified PoS (Product of the Sums) form of the "less than" function.
 
-   $$greater_{\text{SoP}}^{\text{min}}= b_1 \cdot \bar{a}_1          \bar{b} \cdot a+c \cdot \overline{(b+\bar{a})}$$ 
+   $$greater_{\text{SoP}}^{\text{min}}= b_1 \cdot \bar{a}_1 + b_1 \cdot b_0 \cdot \bar{a}_0 + b_0 \cdot \bar{a}_1 \cdot \bar{a}_0 $$ 
    
    $$f_{\text{(N)OR}}(c, b, a)= \overline{(b+\bar{a})} + \overline{\bar{c} + (b+\bar{a})}$$
 
