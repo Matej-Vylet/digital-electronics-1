@@ -30,11 +30,11 @@
    -- Experiments on your own: LED(7:4) indicators
       LED(4) <= '1' when (SW = "0000") else
                 '0'; 
-       LED(5) <= '1' when (SW > "1001") else
+      LED(5) <= '1' when (SW > "1001") else
                 '0';
-       LED(6) <= '1' when( SW(0) = '1') else
+      LED(6) <= '1' when( SW(0) = '1') else
                 '0';
-       LED(7) <= '1' when (SW = "0001" or SW = "0010" or SW = "0100" or SW = "1000") else
+      LED(7) <= '1' when (SW = "0001" or SW = "0010" or SW = "0100" or SW = "1000") else
                 '0';
    ```
 
