@@ -29,8 +29,9 @@ p_cnt_up_down : process (clk) is
    ![Simulated time waveforms](https://user-images.githubusercontent.com/124773189/225330205-3c80fd65-b4eb-429f-a91d-0900e09c85c0.png)
 
 
+
 ### Two counters
 
 1. Image of the top layer structure including both counters, ie a 4-bit bidirectional counter from *Part 4* and a 12-bit counter with a 10 ms time base from *Experiments on your own*. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
 
-   ![counter](https://user-images.githubusercontent.com/124773189/225351477-9f59df8b-3942-4989-96a5-e4cb27b85213.jpg)
+![counter](https://user-images.githubusercontent.com/124773189/225352099-0eb535e8-75a6-4e20-80dc-7467a29597f7.jpg)
