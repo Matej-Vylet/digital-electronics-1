@@ -1,1 +1,1 @@
- ![Simulated time waveforms](/assets/images/wavedrom.png)
+ ![Simulated time waveforms](/07-display_driver/wavedrom.png)
