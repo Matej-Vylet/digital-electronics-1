@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity top is
 port (
     CLK100MHZ : in    std_logic; --! Main clock
-    SW : in    std_logic_vector(1 downto 0); --Counter direction
+    SW : in    std_logic_vector(15 downto 0); --Counter direction
     CA: out std_logic; --cathode A
     CB: out std_logic; --cathode B
     CC:out std_logic; --cathode C
@@ -42,9 +42,10 @@ port (
     CE: out std_logic; --cathode E
     CF: out std_logic; --cathode F
     CG: out std_logic; --cathode G
+    DP :out std_logic;
     AN: out std_logic_vector(7 downto 0); --Common anode signals to individual displays
-    BTNC: in std_logic; --synchronous reset
-    LED: out std_logic_vector (11 downto 0)
+    BTNC: in std_logic --synchronous reset
+   
     
   );
 end top;
@@ -52,90 +53,61 @@ end top;
 ----------------------------------------------------------
 -- Architecture body for top level
 ----------------------------------------------------------
-
 architecture behavioral of top is
-
-  signal sig_en_10ms : std_logic ;
-  signal sig_cnt_12bit : std_logic_vector(11 downto 0);
-
-  -- 4-bit counter @ 250 ms
-  signal sig_en_250ms : std_logic;                    --! Clock enable signal for Counter0
-  signal sig_cnt_4bit : std_logic_vector(3 downto 0); --! Counter0
-
+  -- No internal signals are needed today:)
 begin
 
   --------------------------------------------------------
-  -- Instance (copy) of clock_enable entity
+  -- Instance (copy) of driver_7seg_4digits entity
   --------------------------------------------------------
-  clk_en0 : entity work.clock_enable
-      generic map(
-          g_MAX => 25000000
-      )
-      port map(
-          clk => CLK100MHZ,-- WRITE YOUR CODE HERE
-          rst => BTNC, -- WRITE YOUR CODE HERE
-          ce  => sig_en_250ms
-      );
-clk_en1 : entity work.clock_enable
-      generic map(
-          g_MAX => 1000000
-      )
-      port map(
-          clk => CLK100MHZ,-- WRITE YOUR CODE HERE
-          rst => BTNC, -- WRITE YOUR CODE HERE
-          ce  => sig_en_10ms
-      );
-  --------------------------------------------------------
-  -- Instance (copy) of cnt_up_down entity
-  --------------------------------------------------------
-  bin_cnt0 : entity work.cnt_up_down
-     generic map(
-       g_CNT_WIDTH => 4
-          -- WRITE YOUR CODE HERE
-      )
-      port map(
-      clk => CLK100MHZ,
-      rst =>BTNC,
-      en => sig_en_250ms,
-      cnt_up => SW(0),
-      cnt => sig_cnt_4bit
-          -- WRITE YOUR CODE HERE
-      );
+  driver_seg_4 : entity work.driver_7seg_4digits
+      port map (
+          clk      => CLK100MHZ,
+          rst      => BTNC,
+          data3(3) => SW(15),
+          data3(2) => SW(14),
+          data3(1) => SW(13),
+          data3(0) => SW(12),
 
-  bin_cnt1 : entity work.cnt_up_down
-     generic map(
-       g_CNT_WIDTH => 12
-          -- WRITE YOUR CODE HERE
-      )
-      port map(
-      clk => CLK100MHZ,
-      rst =>BTNC,
-      en => sig_en_10ms,
-      cnt_up => SW(1),
-      cnt => sig_cnt_12bit
-          -- WRITE YOUR CODE HERE
-      );
-  --------------------------------------------------------
-  -- Instance (copy) of hex_7seg entity
-  --------------------------------------------------------
-  hex2seg : entity work.hex_7seg
-      port map(
-          blank  => BTNC,
-          hex    => sig_cnt_4bit,
+          -- MAP OTHER DATA INPUTS TO ON-BOARD SWITCHES 11:4 HERE
+          data2(3) => SW(11),
+          data2(2) => SW(10),
+          data2(1) => SW(9),
+          data2(0) => SW(8),
+          
+          data1(3) => SW(7),
+          data1(2) => SW(6),
+          data1(1) => SW(5),
+          data1(0) => SW(4),
+
+
+          data0(3) => SW(3),
+          data0(2) => SW(2),
+          data0(1) => SW(1),
+          data0(0) => SW(0),
+
           seg(6) => CA,
           seg(5) => CB,
           seg(4) => CC,
           seg(3) => CD,
           seg(2) => CE,
           seg(1) => CF,
-          seg(0) => CG
+          seg(0) => CG,
+          -- MAP DISPLAY SEGMENTS B:G HERE
+
+
+          -- DECIMAL POINT
+          dp_vect => "0111",
+          dp      => DP,
+
+          -- DIGITS
+          dig(3 downto 0) => AN(3 downto 0)
       );
 
   --------------------------------------------------------
   -- Other settings
   --------------------------------------------------------
-  -- Connect one common anode to 3.3V
-  AN <= b"1111_1110";
-  LED <= sig_cnt_12bit;
+  -- Disconnect the top four digits of the 7-segment display
+  AN(7 downto 4) <= b"1111";
 
 end architecture behavioral;
