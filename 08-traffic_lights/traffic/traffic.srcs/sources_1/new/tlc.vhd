@@ -113,7 +113,7 @@ begin
         -- according to the delay value.
         
         if(prior = '1') then
-            sig_state <=WEST_Go;
+            sig_state <=WEST_STOP;
         end if; 
         
         case sig_state is
