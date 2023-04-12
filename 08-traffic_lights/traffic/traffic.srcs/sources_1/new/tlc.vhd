@@ -114,6 +114,7 @@ begin
         
         if(prior = '1') then
             sig_state <=WEST_STOP;
+            sig_cnt <= c_ZERO;
         end if; 
         
         case sig_state is
