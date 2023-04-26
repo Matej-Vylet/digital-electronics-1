@@ -46,10 +46,10 @@ architecture Behavioral of dekoder is
 signal sig_en_clk: std_logic;
 signal sig_input: std_logic_vector(1 downto 0);
 signal sig_slovo : std_logic_vector(4 downto 0);
-signal index : natural ;
+signal index : natural :=0 ;
 
 begin
-index <= 0;
+
   clk_en0 : entity work.clock_enable
     generic map (
       -- FOR SIMULATION, KEEP THIS VALUE TO 4
@@ -64,18 +64,30 @@ index <= 0;
       ce  => sig_en_clk
     );
 
+sig_input<=input;
 prevod : process(sig_input, rst) is 
+
 begin
   if(rst = '1') then
     slovo <= "00000";
     index <=0;
  else
-    index<= index+1;
+    if(index=5) then
+        index <=index+1;
+    end if;
+   
     if(sig_input = "11") then
-    sig_slovo(index) <= '1';
+        sig_slovo(index) <= '1';
+        index<= index+1;
     
     elsif (sig_input = "10") then
-    sig_slovo(index) <= '0';
+        sig_slovo(index) <= '0';
+        index<= index+1;
+    
+    else
+    slovo<=sig_slovo;
+    sig_slovo<="00000";
+    index<=0;
         
         
  
@@ -83,5 +95,5 @@ begin
    end if;   
 
 end process prevod;
-slovo <= sig_slovo;
+
 end Behavioral;
