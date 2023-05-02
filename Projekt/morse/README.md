@@ -6,7 +6,7 @@
 
 Naprogramujte vysílač a přijímač morseova kódu.
 
-Projekt jsme si rozdělili na několik dílčích modulů: \n
+Projekt jsme si rozdělili na několik dílčích modulů: \
 *přijímání a vysílíní samotného signálu
 *překlad signálu do morseovy abecedy
 *překlad morseovy abecedy do obyčejné abecedy
