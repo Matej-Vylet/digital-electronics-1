@@ -118,7 +118,9 @@ process_read : process (clk) is
   
 Tento projekt není ani z daleka dokončen, ale nebylo na něm stráveno málo hodin. Myslím, že hlavní příčina tohoto nezdaru je, že ani jeden jsme plně nepochopili podstatu programování v jazyce VHDL, tudíž jsme naráželi na pro nás nečekané a nepochopitelné překážky. Jednou takovou překážkou ku příkladu byl jev, při kterém nebylo možno změnit hodnotu v signálu ani po prokazatelně vykonaném přiřazovacím příkazu. Jsem si jistý, že tento problém má docela jednoduché řešení, ale nebyl jsem ho schopný najít. Takových problémů bylo však více.
   
-  
+## Návod k obsluze
+
+Vzhedem k tomu, že není projekt dokončen, neuvádíme ani návod k obsluze, ani instruktážní video.
 
 
 
