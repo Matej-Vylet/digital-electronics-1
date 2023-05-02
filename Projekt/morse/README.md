@@ -1,6 +1,10 @@
-## Display driver
+## Členové týmu
+- Matěj Výlet (dokumentace)
+- Marek Kožiak (programování)
 
-1. Listing of VHDL code of the completed process `p_mux`. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+## Teorie
+
+
 
 ```vhdl
     --------------------------------------------------------
