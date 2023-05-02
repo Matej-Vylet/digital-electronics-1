@@ -18,7 +18,16 @@ Vstupní signál je nejpre čten buď ze vstupního pinu, nebo je zadáván ruč
 - Reciever
 
   Je to jednoduchý vstupní modul, který pouze čte hodnoty na vstupu.
-  
+ ```vhdl
+  process(input)
+    begin
+        if (input = '1') then
+            signal_morse_code <= '1';
+        else
+            signal_morse_code <= '0';
+        end if;
+    end process;
+   ```
 - Reader_t
 
   Tento modul čte data, která přicházejí z tlačítka používané uživatalem a rozpoznává, jestli je na vstupu čárka nebo tečka.
