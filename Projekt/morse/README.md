@@ -17,7 +17,7 @@ Vstupní signál je nejpre čten buď ze vstupního pinu, nebo je zadáván ruč
 
 - Reciever
 
-  - Je to jednoduchý vstupní modul, který pouze čte hodnoty na vstupu.
+  Je to jednoduchý vstupní modul, který pouze čte hodnoty na vstupu.
 
 
 
